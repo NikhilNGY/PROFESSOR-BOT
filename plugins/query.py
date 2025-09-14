@@ -75,7 +75,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.message.delete()
                 try: await query.message.reply_to_message.delete()
                 except: pass
-            else: await query.answer("Buddy Don't Touch Others Property 😁", show_alert=True)
+            else: await query.answer("Buddy Don't Touch Others Property 😁 Search Yourself And Get Files", show_alert=True)
             
     elif "groupcb" in query.data:
         group_id = query.data.split(":")[1]
@@ -200,9 +200,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
             else:
                 await client.send_cached_media(chat_id=query.from_user.id, file_id=file_id, caption=f_caption, protect_content=True if ident == "filep" else False)
-                await query.answer('Cʜᴇᴄᴋ PM, I Hᴀᴠᴇ Sᴇɴᴛ Fɪʟᴇs Iɴ Pᴍ', show_alert=True)
+                await query.answer('Cʜᴇᴄᴋ PM, I Hᴀᴠᴇ Sᴇɴᴛ Fɪʟᴇs Iɴ Pᴍ🫠', show_alert=True)
         except UserIsBlocked:
-            await query.answer('Uɴʙʟᴏᴄᴋ Tʜᴇ Bᴏᴛ Mᴀʜɴ !', show_alert=True)
+            await query.answer('🥱 Uɴʙʟᴏᴄᴋ Tʜᴇ Bᴏᴛ Mᴀʜɴ !', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
@@ -429,31 +429,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":                        
         buttons = [[
-            InlineKeyboardButton("➕️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ ➕", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
-            ],[
-            InlineKeyboardButton("Sᴇᴀʀᴄʜ 🔎", switch_inline_query_current_chat=''), 
-            InlineKeyboardButton("Cʜᴀɴɴᴇʟ 🔈", url="https://t.me/mkn_bots_updates")
-            ],[      
-            InlineKeyboardButton("Hᴇʟᴩ 🕸️", callback_data="help"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ ✨", callback_data="about")
+            InlineKeyboardButton('• Bᴀᴄᴋᴜᴘ Cʜᴀɴɴᴇʟ •', url='https://t.me/sandalwood_kannada_moviesz')
+        ],
+        [
+            InlineKeyboardButton('• Mᴏᴠɪᴇ Gʀᴏᴜᴘ •', url='https://t.me/Interworld_groups'),
+            InlineKeyboardButton('• Mᴀɪɴ Cʜᴀɴɴᴇʟ •', url='https://t.me/KR_PICTURE')
+        ],
+        [
+            InlineKeyboardButton('• Hᴇʟᴘ •', callback_data='help')
         ]]
         await query.edit_message_media(InputMediaPhoto(random.choice(PICS), START_MESSAGE.format(user=query.from_user.mention, bot=client.mention), enums.ParseMode.HTML), reply_markup=InlineKeyboardMarkup(buttons))
        
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('⚙️ Aᴅᴍɪɴ Pᴀɴᴇʟ ⚙️', 'admin')            
-            ],[
-            InlineKeyboardButton('Fɪʟᴛᴇʀꜱ', 'openfilter'),
-            InlineKeyboardButton('Cᴏɴɴᴇᴄᴛ', 'coct')
-            ],[                       
-            InlineKeyboardButton('Fɪʟᴇ Sᴛᴏʀᴇ', 'newdata'),
-            InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅᴇ', 'extmod')
-            ],[           
-            InlineKeyboardButton('Gʀᴏᴜᴩ Mᴀɴᴀɢᴇʀ', 'gpmanager'), 
-            InlineKeyboardButton('Bᴏᴛ Sᴛᴀᴛᴜꜱ ❄️', 'stats')
-            ],[
-            InlineKeyboardButton('✘ Cʟᴏꜱᴇ', 'close_data'),
-            InlineKeyboardButton('« Bᴀᴄᴋ', 'start')           
+            InlineKeyboardButton('• Aɴʏ Iꜱꜱᴜᴇ Cᴏɴᴛᴀᴄᴛ •', url=f'https://t.me/Nikhil5757h')
+        ], [
+            InlineKeyboardButton('• Sᴛᴀᴛᴜs •', callback_data='stats'),
+            InlineKeyboardButton('• Owner •', url=f'https://t.me/Nikhil5757h')
         ]]
         await query.edit_message_media(InputMediaPhoto(random.choice(PICS), script.HELP_TXT.format(query.from_user.mention), enums.ParseMode.HTML), reply_markup=InlineKeyboardMarkup(buttons))     
         
@@ -468,7 +460,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', url='https://github.com/MrMKN/PROFESSOR-BOT')
+            InlineKeyboardButton('ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', url='https://t.me/Nikhil5757h')
             ],[
             InlineKeyboardButton('‹ Bᴀᴄᴋ', 'about')
         ]]
